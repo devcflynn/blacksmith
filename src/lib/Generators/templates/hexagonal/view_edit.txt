@@ -1,5 +1,5 @@
 {{=<% %>=}}
-@extends('layouts.scaffold')
+@extends('layouts.master')
 
 @section('main')
 

@@ -34,9 +34,9 @@ class InitializeCommand extends \Symfony\Component\Console\Command\Command
     {
         $this->ignoreValidationErrors();
 
-        $this->setName('init')
+        $this->setName('init_hex')
                 ->setDescription('Initialize Blacksmith with appropriate configs and files within the project, (specific to hexagonal architecture)')
-               ->addArgument('path', InputArgument::REQUIRED, "Location of your Domain lib path. Typically - this is typically app/lib.");
+               ->addArgument('path', InputArgument::OPTIONAL, "Location of your Domain lib path. Defaults to: app/lib.");
     }
 
     /**
@@ -46,6 +46,10 @@ class InitializeCommand extends \Symfony\Component\Console\Command\Command
      */
     protected function fire()
     {
-     
+        // Simplest Solution here,
+        $args = $this->input->getArguments();
+        $path = (in_array('path', $args)) ? $args['path'] : 'app/lib';
+        
+        shell_exec('git clone https://github.com/devcflynn/blacksmith-contracts.git '.$path.'; cd '.$path.'; rm README.md; rm -rf .git');
     }
 }

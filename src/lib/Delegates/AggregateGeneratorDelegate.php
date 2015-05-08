@@ -201,12 +201,15 @@ class AggregateGeneratorDelegate implements GeneratorDelegateInterface
      */
     public function updateRoutesFile($name, $dir)
     {
-        $name = strtolower(Pluralizer::plural($name));
+         $name = strtolower(Pluralizer::plural($name));
 
         $routes = implode(DIRECTORY_SEPARATOR, [$dir, 'app', 'routes.php']);
 
         if ($this->filesystem->exists($routes)) {
             $route = "Route::resource('" . $name . "', '" . ucwords($name) . "Controller');";
+            // App binding if not setup properly
+           // $bind = "App::bind('Contracts\Repositories\'" . $name . "'RepositoryInterface', 'Repositories\DbRepository');
+           
             $contents = $this->filesystem->get($routes);
             if (str_contains($contents, $route)) {
                 return;
@@ -218,4 +221,6 @@ class AggregateGeneratorDelegate implements GeneratorDelegateInterface
             );
         }
     }
+
+
 }//end class

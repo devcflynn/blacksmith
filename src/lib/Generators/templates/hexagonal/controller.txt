@@ -65,7 +65,7 @@ class {{Entities}}Controller extends BaseController implements CreatorInterface,
      */
     public function creationSucceeded(InstanceInterface $instance)
     {
-        return Redirect::route('{{collection}}.index')->with('message', '{{Entity}} was successfully created');
+        return Redirect::route('{{collection}}.index')->with('success', '{{Entity}} was successfully created');
     }
 
     /**
@@ -79,7 +79,7 @@ class {{Entities}}Controller extends BaseController implements CreatorInterface,
         return Redirect::route('{{collection}}.create')
             ->withInput()
             ->withErrors($validator->errors())
-            ->with('message', 'Oops, there was an error');
+            ->with('error', 'Oops, there was an error');
     }
 
     /**
@@ -144,7 +144,7 @@ class {{Entities}}Controller extends BaseController implements CreatorInterface,
         return Redirect::route('{{collection}}.edit', $instance->identity())
             ->withInput()
             ->withErrors($validator->errors())
-            ->with('message', 'Oops, there was an error');
+            ->with('error', 'Oops, there was an error');
     }
 
     /**
@@ -168,7 +168,7 @@ class {{Entities}}Controller extends BaseController implements CreatorInterface,
      */
     public function destroySucceeded(InstanceInterface $instance)
     {
-        return Redirect::route('{{collection}}.index')->with('message', '{{Entity}} was successfully deleted');
+        return Redirect::route('{{collection}}.index')->with('success', '{{Entity}} was successfully deleted');
     }
 
     /**
@@ -179,6 +179,6 @@ class {{Entities}}Controller extends BaseController implements CreatorInterface,
      */
     public function destroyFailed(InstanceInterface $instance)
     {
-        return Redirect::route('{{collection}}.index')->with('message', 'Oops, couldn\'t delete that {{instance}}');
+        return Redirect::route('{{collection}}.index')->with('error', 'Oops, couldn\'t delete that {{instance}}');
     }
 }
