@@ -12,3 +12,14 @@ class {{Entity}} extends Eloquent implements InstanceInterface
         return $this->id;
     }
 }
+
+
+<?php namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Test extends Model {
+
+	//
+
+}
