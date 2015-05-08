@@ -1,12 +1,12 @@
 {
-    "name": "indatus/blacksmith",
+    "name": "devcflynn/blacksmith",
     "description": "Template based CLI code generation tool",
     "keywords": ["laravel code generator", "laravel generator", "blacksmith"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Brian Webb",
-            "email": "brianwebb01@gmail.com"
+            "name": "Chris Flynn",
+            "email": "dev.cflynn@gmail.com"
         }
     ],
     "autoload": {
