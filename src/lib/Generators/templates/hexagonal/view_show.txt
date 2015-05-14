@@ -1,7 +1,7 @@
 {{=<% %>=}}
 @extends('layouts.master')
 
-@section('main')
+@section('content')
 
 <h1>Show <% Entity %></h1>
 
