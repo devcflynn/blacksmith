@@ -118,17 +118,21 @@ If this is the first time you are using Blacksmith then you will need a few cont
 This will checkout the [contacts](https://github.com/devcflynn/blacksmith-contracts): and set them up in your app/lib folder (4.* specific).
 
 ##Laravel 4 – Tutorial:
-composer create-project laravel/laravel {directory} 4.2 –prefer-dist
+    
+    composer create-project laravel/laravel {directory} 4.2 –prefer-dist
     cd [directory]
     php artisan serve
+
 if first time hex, run: blacksmith init_hex [dir:optional]
 
 add composer.json:
+
     "autoload": { 
         "classmap": [ 
         **"app/lib",**
 
 to generate your first scaffold, run:
+       
         blacksmith generate [Entity] scaffold
         php artisan migrate
         composer dump-autoload
