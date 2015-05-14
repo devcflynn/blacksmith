@@ -124,17 +124,19 @@ composer create-project laravel/laravel {directory} 4.2 –prefer-dist
 if first time hex, run: blacksmith init_hex [dir:optional]
 
 add composer.json:
-  "autoload": { 
+    "autoload": { 
         "classmap": [ 
-            "app/lib",
+        **"app/lib",**
 
 to generate your first scaffold, run:
-    blacksmith generate [Entity] scaffold
-    php artisan migrate
-    composer dump-autoload
+        blacksmith generate [Entity] scaffold
+        php artisan migrate
+        composer dump-autoload
 
 **Assumptions**:
+
 You have a **layouts/master.blade.php**
+
 db connected already in app/config/database.php
 session variables for for success and error(s) are setup
 phpunit and mockery are installed as dependencies in you composer.json
