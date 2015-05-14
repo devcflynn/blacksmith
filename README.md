@@ -135,11 +135,12 @@ to generate your first scaffold, run:
 
 **Assumptions**:
 
-You have a **layouts/master.blade.php**
+* `You have a **layouts/master.blade.php** as a master template`
+* `db connected already in app/config/database.php`
+* `db connected already in app/config/database.php`
+* `session variables for for success and error(s) are setup and being displayed`
+* `phpunit and mockery are installed as dependencies in you composer.json`
 
-db connected already in app/config/database.php
-session variables for for success and error(s) are setup
-phpunit and mockery are installed as dependencies in you composer.json
 
 ##Laravel 5 – Tutorial:
 Coming Soon!
