@@ -115,7 +115,7 @@ If this is the first time you are using Blacksmith then you will need a few cont
 
     blacksmith init_hex app/lib
 
-This will checkout the [contacts](https://github.com/devcflynn/blacksmith-contracts): and set them up in your app/lib folder (4.* specific).
+This will checkout the [contracts & classes](https://github.com/devcflynn/blacksmith-contracts): and set them up in your app/lib folder (4.* specific).
 
 ##Laravel 4 – Tutorial:
     
@@ -140,7 +140,6 @@ to generate your first scaffold, run:
 **Assumptions**:
 
 * `You have a **layouts/master.blade.php** as a master template`
-* `db connected already in app/config/database.php`
 * `db connected already in app/config/database.php`
 * `session variables for for success and error(s) are setup and being displayed`
 * `phpunit and mockery are installed as dependencies in you composer.json`

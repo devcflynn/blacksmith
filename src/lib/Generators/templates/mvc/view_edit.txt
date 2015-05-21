@@ -1,0 +1,17 @@
+{{=<% %>=}}
+@extends('layout.master')
+
+@section('content')
+
+<h1>Edit <% Entity %></h1>
+
+{{ Form::model($<%instance%>, array('method' => 'PATCH', 'route' => array('<% collection %>.update', $<% instance %>->id))) }}
+
+        @include('<% collection %>._form')
+ 
+        {{ Form::submit('Update', array('class' => 'btn btn-info')) }}
+        {{ link_to_route('<% collection %>.show', 'Cancel', $<% instance %>->id, array('class' => 'btn')) }}
+
+{{ Form::close() }}
+
+@stop

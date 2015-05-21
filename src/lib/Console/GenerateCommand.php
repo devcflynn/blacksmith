@@ -49,6 +49,7 @@ class GenerateCommand extends \Symfony\Component\Console\Command\Command
      */
     protected function fire()
     {
+
         $generatorDelegateFactory = new GeneratorDelegateFactory(
             new ConfigReaderFactory,
             new GeneratorFactory,

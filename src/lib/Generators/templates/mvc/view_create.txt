@@ -1,0 +1,17 @@
+{{=<% %>=}}
+@extends('layout.master')
+
+@section('content')
+
+<h1>Create <% Entity %></h1>
+
+{{ Form::open(array('route' => '<% collection %>.store')) }}
+	
+	@include('<% collection %>._form')
+    
+    {{ Form::submit('Submit', array('class' => 'btn btn-info')) }}
+{{ Form::close() }}
+
+@stop
+
+

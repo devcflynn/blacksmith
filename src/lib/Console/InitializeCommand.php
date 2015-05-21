@@ -46,6 +46,7 @@ class InitializeCommand extends \Symfony\Component\Console\Command\Command
      */
     protected function fire()
     {
+        die(app_path());
         // Simplest Solution here,
         $args = $this->input->getArguments();
         $path = (in_array('path', $args)) ? $args['path'] : 'app/lib';

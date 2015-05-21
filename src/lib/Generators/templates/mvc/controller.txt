@@ -1,0 +1,95 @@
+<?php
+// Eloquent ORM Implementiation
+
+class {{Entities}}Controller extends BaseController 
+{
+
+     /**
+     * Display a listing of the {{collection}}.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+
+        ${{collection}} = {{Entity}}::all();
+
+        return View::make('{{collection}}.index', compact('{{collection}}'));
+    }
+
+    /**
+     * Show the form for creating a new {{instance}}.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('{{collection}}.create');
+    }
+
+    /**
+     * Store a newly created {{instance}} in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $instance = {{Entity}}::create(Input::except('_token'));
+
+        return \Redirect::back()->with('success', '{{Entity}} was saved!');
+    }
+
+    /**
+     * Display the specified {{instance}}.
+     *
+     * @param  int      $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        ${{instance}} = {{Entity}}::find($id);
+
+        return View::make('{{collection}}.show', compact('{{instance}}'));
+    }
+
+    /**
+     * Show the form for editing the specified {{instance}}.
+     *
+     * @param  int      $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        ${{instance}} = {{instance}}::find($id);
+
+        return View::make('{{collection}}.edit', compact('{{instance}}'));
+    }
+
+    /**
+     * Update the specified {{instance}} in storage.
+     *
+     * @param  int      $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        // Update with Eloquent Implementation
+        $dog = {{Entity}}::find($id);
+        // Validate...
+        $dog->update(Input::except('_token'));        
+        return Redirect::back()->with('success', '{{Entity}} successfully updated!');
+    }    
+
+    /**
+     * Remove the specified {{Entity}} from storage.
+     *
+     * @param  int      $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        {{Entity}}::destroy($id); 
+       
+        return Redirect::back()->with('success', '{{Entity}} Removed');
+    }    
+}

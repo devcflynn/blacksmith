@@ -38,6 +38,7 @@ class ConfigReader implements ConfigReaderInterface
      * may exist
      */
     const CONFIG_TYPE_HEXAGONAL        = 'hexagonal';
+    const CONFIG_TYPE_MVC              = 'mvc';
     const CONFIG_TYPE_KEY              = 'config_type';
     const CONFIG_VAL_TEMPLATE          = 'template';
     const CONFIG_VAL_DIRECTORY         = 'directory';
@@ -70,7 +71,8 @@ class ConfigReader implements ConfigReaderInterface
      * @var array
      */
     protected $config_types = [
-        "hexagonal"
+        "hexagonal",
+        "mvc", // Native ORM based implementation
     ];
 
     /**
@@ -100,6 +102,26 @@ class ConfigReader implements ConfigReaderInterface
         "validator",
         "repository_interface",
         "db_repository"
+    ];
+
+    /**
+     * Config keys required for the hexagonal
+     * config type
+     * 
+     * @var array
+     */
+    protected $mvc_config_keys = [
+        "model",
+        "controller",
+        "seed",
+        "migration_create",
+        "view_create",
+        "view_edit",
+        "view_show",
+        "view_index",
+        "form",
+        "unit_test",
+        "functional_test"
     ];
 
     /**
@@ -148,6 +170,7 @@ class ConfigReader implements ConfigReaderInterface
         $this->filesystem = $fs;
 
         if (!is_null($path)) {
+           
             if (!$this->filesystem->exists($path)) {
                 throw new FileNotFoundException('Config file "'.$path.'" could not be found');
             }
@@ -155,7 +178,7 @@ class ConfigReader implements ConfigReaderInterface
             $this->configDir = pathinfo($path, PATHINFO_DIRNAME);
 
         } else {
-            $default = __DIR__.'/../Generators/templates/hexagonal/config.json';
+            $default = __DIR__.'/../Generators/templates/mvc/config.json';
             $this->configDir = pathinfo($default, PATHINFO_DIRNAME);
             $this->config = json_decode($this->filesystem->get($default), true);
         }

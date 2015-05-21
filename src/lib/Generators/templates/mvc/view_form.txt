@@ -1,0 +1,7 @@
+{{=<% %>=}}
+<%# form_rows %>
+<li>
+    <% label %>
+    <% element %>
+</li>
+<%/ form_rows %>

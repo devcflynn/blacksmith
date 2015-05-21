@@ -1,0 +1,59 @@
+{
+    "config_type": "mvc",
+
+    "model": {
+        "template": "model.txt",
+        "directory": "app/models",
+        "filename": "{{Entity}}.php"
+    },
+    "controller": {
+        "template": "controller.txt",
+        "directory": "app/controllers",
+        "filename": "{{Entities}}Controller.php"
+    },
+    "seed": {
+        "template": "seed.txt",
+        "directory": "app/database/seeds",
+        "filename": "{{Entities}}TableSeeder.php"
+    },
+    "migration_create": {
+        "template": "migration_create.txt",
+        "directory": "app/database/migrations",
+        "filename": "{{migration_timestamp}}_create_{{collection}}_table.php"
+    },
+    "view_create": {
+        "template": "view_create.txt",
+        "directory": "app/views/{{collection}}",
+        "filename": "create.blade.php"
+    },
+    "view_edit": {
+        "template": "view_edit.txt",
+        "directory": "app/views/{{collection}}",
+        "filename": "edit.blade.php"
+    },
+    "view_show": {
+        "template": "view_show.txt",
+        "directory": "app/views/{{collection}}",
+        "filename": "show.blade.php"
+    },
+    "view_index": {
+        "template": "view_index.txt",
+        "directory": "app/views/{{collection}}",
+        "filename": "index.blade.php"
+    },
+    "form": {
+        "template": "view_form.txt",
+        "directory": "app/views/{{collection}}",
+        "filename": "_form.blade.php"
+    },
+    "unit_test": {
+        "template": "unit_test.txt",
+        "directory": "app/tests/models",
+        "filename": "{{Entity}}Test.php"
+    },
+    "functional_test": {
+        "template": "functional_test.txt",
+        "directory": "app/tests/controllers",
+        "filename": "{{Entities}}Test.php"
+    }
+}
