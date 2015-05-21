@@ -11,6 +11,7 @@ use Illuminate\Filesystem\Filesystem;
 class GeneratorDelegateFactory
 {
     const ARCH_HEXAGONAL = "hexagonal";
+    const ARCH_MVC = "mvc";
 
     /**
      * Array of generators that are aggregates of other generators
@@ -51,6 +52,10 @@ class GeneratorDelegateFactory
         switch ($architecture) {
 
             case static::ARCH_HEXAGONAL:
+                $delegate = $this->makeHexagonalGeneratorDelegate($cmd, $args, $optionReader);
+                break;
+
+            case static::ARCH_MVC:
                 $delegate = $this->makeHexagonalGeneratorDelegate($cmd, $args, $optionReader);
                 break;
 

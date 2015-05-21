@@ -60,7 +60,7 @@ class {{Entities}}Controller extends BaseController
      */
     public function edit($id)
     {
-        ${{instance}} = {{instance}}::find($id);
+        ${{instance}} = {{Entity}}::find($id);
 
         return View::make('{{collection}}.edit', compact('{{instance}}'));
     }
