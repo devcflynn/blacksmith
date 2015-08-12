@@ -5,7 +5,7 @@ Blacksmith works nicely with the [Laravel](http://laravel.com) PHP framework but
 
 ---
 
-[![Build Status](https://travis-ci.org/Indatus/blacksmith.png?branch=master)](https://travis-ci.org/Indatus/blacksmith) [![Code Coverage](https://scrutinizer-ci.com/g/Indatus/blacksmith/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Indatus/blacksmith/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Indatus/blacksmith/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Indatus/blacksmith/?branch=master)
+[![Build Status](https://travis-ci.org/Indatus/blacksmith.png?branch=master)](https://travis-ci.org/Indatus/blacksmith) [![Code Coverage](https://scrutinizer-ci.com/g/Indatus/blacksmith/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Indatus/blacksmith/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Indatus/blacksmith/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Indatus/blacksmith/?branch=master) [![Join the chat at https://gitter.im/Indatus/blacksmith](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Indatus/blacksmith?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Out of the box for the 1.0.0 release Blacksmith ships with a [Laravel hexagonal architecture](https://github.com/brianwebb01/hexagonal-laravel-experiment) configuration and templates. Why? Because this is what I needed first.
 
